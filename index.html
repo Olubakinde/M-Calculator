@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><u>Calculator</u></h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="loan-amount">Loan Amount ($):</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                        </div>
+                        <input type="number" id="loan-amount" class="form-control" placeholder="Enter loan amount" step="0.01" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="interest-rate">Annual Interest Rate (%):</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-percent"></i></span>
+                        </div>
+                        <input type="number" id="interest-rate" class="form-control" placeholder="Enter interest rate" step="0.01" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="loan-term">Loan Term (years):</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                        </div>
+                        <input type="number" id="loan-term" class="form-control" placeholder="Enter loan term" step="1" required>
+                    </div>
+                </div>
+                <button onclick="calculateMortgage()" class="btn btn-primary">Calculate</button>
+            </div>
+            <div class="col-md-4">
+                <div class="image-section" id="image-section">
+                    <img src="image.png" alt="Mortgage Calculator" id="calculator-image">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="results d-none" id="results-section">
+                    <h2>Monthly Payment: $<span id="monthly-payment">0.00</span></h2>
+                    <h2>Total Payment: $<span id="total-payment">0.00</span></h2>
+                    <h2>Total Interest: $<span id="total-interest">0.00</span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
